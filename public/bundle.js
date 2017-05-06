@@ -9540,8 +9540,8 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function tick() {
-    var element = _react2.default.createElement(
+function Clock(props) {
+    return _react2.default.createElement(
         "div",
         null,
         _react2.default.createElement(
@@ -9553,11 +9553,13 @@ function tick() {
             "h2",
             null,
             "It is ",
-            new Date().toLocaleTimeString(),
+            props.date.toLocaleTimeString(),
             "."
         )
     );
-    _reactDom2.default.render(element, document.getElementById('root'));
+};
+function tick() {
+    _reactDom2.default.render(_react2.default.createElement(Clock, { date: new Date() }), document.getElementById('root'));
 };
 
 setInterval(tick, 1000);
