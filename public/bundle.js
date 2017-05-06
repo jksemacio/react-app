@@ -9545,7 +9545,11 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var HelloWorld = function HelloWorld() {
-    _reactDom2.default.render(_react2.default.createElement('h1', { className: 'greeting' }, 'Hello, world!'), document.getElementById('root'));
+    _reactDom2.default.render(_react2.default.createElement(
+        "h1",
+        { className: "greeting" },
+        "Hello, world!"
+    ), document.getElementById('root'));
 };
 
 exports.default = HelloWorld;

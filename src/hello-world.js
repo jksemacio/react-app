@@ -3,11 +3,7 @@ import ReactDom from "react-dom";
 
 const HelloWorld = () => {
     ReactDom.render(
-    React.createElement(
-        'h1',
-        {className: 'greeting'},
-        'Hello, world!'
-        ),
+    <h1 className='greeting'>Hello, world!</h1>,
         document.getElementById('root')
     )
 };
