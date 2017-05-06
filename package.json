@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/jksemacio/react-app/issues"
   },
-  "homepage": "https://github.com/jksemacio/react-app#readme"
+  "homepage": "https://github.com/jksemacio/react-app#readme",
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
 }
