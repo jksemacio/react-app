@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-function formatName(user) {
-    return user.firstName + ' ' + user.middleName + ' ' + user.lastName;
+const formatName = (user) => {
+    return user.firstName + ' ' + user.middleInitial + '. ' + user.lastName;
 };
 
 const user = {
-    firstName: "Jan Kristoffer",
-    middleName: "Salmo",
-    lastName: "Semacio"
+    firstName: 'Jan Kristoffer',
+    middleInitial: 'S',
+    lastName: 'Semacio'
 };
 
 const element = (

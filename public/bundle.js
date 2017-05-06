@@ -9540,14 +9540,14 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function formatName(user) {
-    return user.firstName + ' ' + user.middleName + ' ' + user.lastName;
+var formatName = function formatName(user) {
+    return user.firstName + ' ' + user.middleInitial + '. ' + user.lastName;
 };
 
 var user = {
-    firstName: "Jan Kristoffer",
-    middleName: "Salmo",
-    lastName: "Semacio"
+    firstName: 'Jan Kristoffer',
+    middleInitial: 'S',
+    lastName: 'Semacio'
 };
 
 var element = _react2.default.createElement(
