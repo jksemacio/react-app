@@ -1,21 +1,13 @@
-var React = require("react");
-var ReactDom = require("react-dom");
-
-ReactDom.render(
-    React.createElement(
-        'h1',
-        {className: 'greeting'},
-        'Hello, world!'
-        ),
-        document.getElementById('root')
-);
+import React from "react";
+import ReactDom from "react-dom";
 
 function formatName(user) {
-    return user.firstName + ' ' + user.lastName;
+    return user.firstName + ' ' + user.middleName + ' ' + user.lastName;
 };
 
 const user = {
     firstName: "Jan Kristoffer",
+    middleName: "Salmo",
     lastName: "Semacio"
 };
 

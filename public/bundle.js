@@ -9530,21 +9530,27 @@ module.exports = __webpack_require__(19);
 "use strict";
 
 
-var React = __webpack_require__(81);
-var ReactDom = __webpack_require__(80);
+var _react = __webpack_require__(81);
 
-ReactDom.render(React.createElement('h1', { className: 'greeting' }, 'Hello, world!'), document.getElementById('root'));
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(80);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function formatName(user) {
-    return user.firstName + ' ' + user.lastName;
+    return user.firstName + ' ' + user.middleName + ' ' + user.lastName;
 };
 
 var user = {
     firstName: "Jan Kristoffer",
+    middleName: "Salmo",
     lastName: "Semacio"
 };
 
-var element = React.createElement(
+var element = _react2.default.createElement(
     "h1",
     null,
     "Hello, ",
@@ -9552,7 +9558,7 @@ var element = React.createElement(
     "!"
 );
 
-ReactDom.render(element, document.getElementById('root'));
+_reactDom2.default.render(element, document.getElementById('root'));
 
 /***/ }),
 /* 83 */
