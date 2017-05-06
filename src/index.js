@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
+import HelloWorld from "./hello-world"
 
 const formatName = (user) => {
     return user.firstName + ' ' + user.middleInitial + '. ' + user.lastName;
@@ -19,3 +20,5 @@ ReactDom.render(
     element,
     document.getElementById('root')
 );
+
+HelloWorld();
