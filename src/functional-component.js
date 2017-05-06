@@ -5,11 +5,17 @@ function Welcome(props) {
     return <h1>Hello, {props.name}!</h1>;
 }
 
-const element = <Welcome name="Jan Kristoffer Semacio" />
+const App = () => {
+    return <div>
+    <Welcome name="Jan Kristoffer Semacio" />
+    <Welcome name="Minna" />
+    <Welcome name="Stranger" />
+    </div>
+};
 
 const FunctionalComponent = () => {
     ReactDom.render(
-    element,
+    <App />,
     document.getElementById('root')
 );
 }

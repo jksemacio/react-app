@@ -9599,10 +9599,18 @@ function Welcome(props) {
     );
 }
 
-var element = _react2.default.createElement(Welcome, { name: "Jan Kristoffer Semacio" });
+var App = function App() {
+    return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(Welcome, { name: "Jan Kristoffer Semacio" }),
+        _react2.default.createElement(Welcome, { name: "Minna" }),
+        _react2.default.createElement(Welcome, { name: "Stranger" })
+    );
+};
 
 var FunctionalComponent = function FunctionalComponent() {
-    _reactDom2.default.render(element, document.getElementById('root'));
+    _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
 };
 
 exports.default = FunctionalComponent;
