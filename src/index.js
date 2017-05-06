@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDom from "react-dom";
-import HelloWorld from "./hello-world"
-import FormatName from "./format-name"
-import FunctionalComponent from "./functional-component"
+import Comment from "./comment-component";
 
-HelloWorld();
-FormatName();
-FunctionalComponent();
+const author = {
+    name: "jksemacio",
+    avatarUrl: "http://lorempixel.com/200/200/"
+};
+const text = "hahaha";
+const date = "04/10/1988";
+
+ReactDom.render(
+    <Comment author={author} text={text} date={date} />,
+    document.getElementById('root')
+);
