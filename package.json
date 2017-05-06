@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jksemacio/react-app#readme",
   "dependencies": {
+    "express": "^4.15.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   }
