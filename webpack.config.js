@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const VENDOR_LIBS = ['react','react-dom'];
 
@@ -37,6 +38,9 @@ const config = {
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        }),
         new ExtractTextPlugin("style.css"),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor'
