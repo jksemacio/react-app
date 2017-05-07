@@ -17,9 +17,16 @@ const config = {
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    loader: "css-loader"
+                    fallback: 'style-loader',
+                    loader: 'css-loader'
                 })
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loaders: [
+                    'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
+                    'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
+                ]
             }
         ]
     },
