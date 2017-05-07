@@ -1,7 +1,7 @@
 import "../styles/image-viewer.css";
-import small from "../assets/small.jpg";
+import big from "../assets/big.jpg";
 
 const image = document.createElement('img');
-image.src = small;
+image.src = big;
 
 document.body.appendChild(image);
