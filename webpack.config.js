@@ -12,7 +12,7 @@ const config = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: '[name].js'
+        filename: '[name].[chunkhash].js'
     },
     module: {
         rules: [
@@ -43,7 +43,7 @@ const config = {
         }),
         new ExtractTextPlugin("style.css"),
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor'
+            names: ['vendor','manifest']
         })
     ]
 };
