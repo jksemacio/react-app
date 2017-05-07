@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
+import "./image-viewer";
 
 class Clock extends React.Component {
     constructor(props) {
