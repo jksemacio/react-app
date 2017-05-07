@@ -4,10 +4,10 @@
   "description": "sample app",
   "main": "index.js",
   "scripts": {
-    "start": "npm run clean && npm run build && node server.js",
+    "start": "npm run build && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf build",
-    "build": "webpack",
+    "build": "npm run clean && webpack",
     "serve": "webpack-dev-server --content-base build/"
   },
   "repository": {
