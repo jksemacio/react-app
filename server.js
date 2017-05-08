@@ -1,11 +1,16 @@
-import http from 'http';
+import config from './config';
+import express from 'express';
 
-const server = http.createServer((req, res) => {
-  res.write('Hello HTTP!\n');
-  setTimeout(() => {
-      res.write('I can stream!\n');
-      res.end();
-  }, 3000);
+const server = express();
+
+server.get('/', (req, res) => {
+  res.send('Hello Express!');
 });
 
-server.listen(8000);
+server.get('/about', (req, res) => {
+  res.send('The about page.');
+});
+
+server.listen(config.port, () => {
+  console.log('Listening on port ', config.port)
+});
