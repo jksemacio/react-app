@@ -16,8 +16,8 @@ const config = {
     },
     module: {
         rules: [
-            { 
-                test: /\.js$/, 
+            {
+                test: /\.js$/,
                 exclude: /node_modules/,
                 use: 'babel-loader'
             },
@@ -34,12 +34,16 @@ const config = {
                     'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
                     'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
                 ]
+            },
+            {
+                test: /\.ejs$/,
+                use: ['ejs-loader','ejs-html-loader?content=Hello%20EJS!']
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './views/index.ejs'
         }),
         new ExtractTextPlugin("style.css"),
         new webpack.optimize.CommonsChunkPlugin({
