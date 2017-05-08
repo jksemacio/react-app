@@ -4,7 +4,7 @@
   "description": "sample app",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node server.js",
+    "start": "concurrently --kill-others \"npm run build\" \"nodemon --exec babel-node server.js\"",
     "clean": "rimraf build",
     "build": "webpack -wd",
     "serve": "webpack-dev-server --content-base build/"
