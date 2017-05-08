@@ -1,7 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const App = () => {
+  return (
+    <h2 className="text-center">
+      Hello React from Function Component!
+    </h2>
+  );
+};
+
 ReactDOM.render(
-  <h1>Hello React with JSX</h1>,
+  <App />,
   document.getElementById('root')
 );
