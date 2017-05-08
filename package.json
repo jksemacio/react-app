@@ -1,5 +1,5 @@
 {
-  "name": "react-app",
+  "name": "fullstack-javascript",
   "version": "1.0.0",
   "description": "sample app",
   "main": "index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jksemacio/react-app.git"
+    "url": "git+https://github.com/jksemacio/web-app.git"
   },
   "author": "jksemacio",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jksemacio/react-app/issues"
+    "url": "https://github.com/jksemacio/web-app/issues"
   },
-  "homepage": "https://github.com/jksemacio/react-app#readme",
+  "homepage": "https://github.com/jksemacio/web-app#readme",
   "dependencies": {
     "express": "^4.15.2",
     "react": "^15.5.4",
