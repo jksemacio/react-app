@@ -22,6 +22,7 @@
   "homepage": "https://github.com/jksemacio/web-app#readme",
   "dependencies": {
     "express": "^4.15.2",
+    "mongodb": "^2.2.26",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
