@@ -1,11 +1,13 @@
-import https from 'https';
+import http from 'http';
 
-https.get('https://www.lynda.com', res => {
+const server = http.createServer();
 
-  console.log('Response status code :', res.statusCode);
+server.listen(8000);
 
-  res.on('data', chunk => {
-    console.log(chunk.toString());
-  });
-
+server.on('request', (req, res) => {
+  res.write('Hello HTTP!\n');
+  setTimeout(() => {
+      res.write('I can stream!\n');
+      res.end();
+  }, 3000);
 });
