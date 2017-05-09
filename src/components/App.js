@@ -20,7 +20,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header message={ this.state.pageHeader } />
-        <HeroesPreview { ...this.props.heroes[0] } />
+        <div>
+        {
+         this.props.heroes.map( heroes =>
+          <HeroesPreview { ...heroes } />)
+        }
+        </div>
       </div>
     );
   };
