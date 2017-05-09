@@ -5,6 +5,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const VENDOR_LIBS = ['react','react-dom'];
 
+const ExtractCss = new ExtractTextPlugin('style.css');
+const ExtractSass = new ExtractTextPlugin({
+  filename: "[name].[contenthash].css"
+});
+
 const config = {
     entry: {
         bundle: './src/index.js',
@@ -16,16 +21,23 @@ const config = {
     },
     module: {
         rules: [
-            { 
-                test: /\.js$/, 
+            {
+                test: /\.js$/,
                 exclude: /node_modules/,
                 use: 'babel-loader'
             },
             {
                 test: /\.css$/,
-                use: ExtractTextPlugin.extract({
+                use: ExtractCss.extract({
                     fallback: 'style-loader',
                     use: 'css-loader'
+                })
+            },
+            {
+                test: /\.scss$/,
+                use: ExtractSass.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader','sass-loader']
                 })
             },
             {
@@ -34,14 +46,19 @@ const config = {
                     'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
                     'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
                 ]
+            },
+            {
+                test: /\.ejs$/,
+                use: ['ejs-loader','ejs-html-loader?content=Hello%20EJS!']
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './views/index.ejs'
         }),
-        new ExtractTextPlugin("style.css"),
+        ExtractCss,
+        ExtractSass,
         new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor','manifest']
         })
