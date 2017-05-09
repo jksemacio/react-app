@@ -1,22 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Header = ({ message }) => {
-  return (
-    <h1 className="text-center">
-      { message }
-    </h1>
-  );
-};
-
-const App = () => {
-  return (
-    <div>
-      <Header message="Welcome to React" />
-      <div>...</div>
-    </div>
-  );
-};
+import App from './components/App'
 
 ReactDOM.render(
   <App message="Hello props!"/>,
