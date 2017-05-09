@@ -6,6 +6,17 @@ class App extends React.Component {
   state = {
     pageHeader: "Welome to React state"
   };
+
+  componentDidMount() {
+    debugger;
+    console.log("mounted!");
+  };
+
+  componentWillUnmount() {
+    debugger;
+    console.log("to be unmount");
+  };
+
   render() {
     return (
       <div>
