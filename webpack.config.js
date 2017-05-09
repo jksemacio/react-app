@@ -5,6 +5,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const VENDOR_LIBS = ['react','react-dom'];
 
+const ExtractCss = new ExtractTextPlugin('style.css');
+const ExtractSass = new ExtractTextPlugin({
+  filename: "[name].[contenthash].css"
+});
+
 const config = {
     entry: {
         bundle: './src/index.js',
@@ -23,9 +28,16 @@ const config = {
             },
             {
                 test: /\.css$/,
-                use: ExtractTextPlugin.extract({
+                use: ExtractCss.extract({
                     fallback: 'style-loader',
                     use: 'css-loader'
+                })
+            },
+            {
+                test: /\.scss$/,
+                use: ExtractSass.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader','sass-loader']
                 })
             },
             {
@@ -45,7 +57,8 @@ const config = {
         new HtmlWebpackPlugin({
             template: './views/index.ejs'
         }),
-        new ExtractTextPlugin("style.css"),
+        ExtractCss,
+        ExtractSass,
         new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor','manifest']
         })
