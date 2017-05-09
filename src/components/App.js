@@ -23,7 +23,7 @@ class App extends React.Component {
         <div>
         {
          this.props.heroes.map( heroes =>
-          <HeroesPreview { ...heroes } />)
+          <HeroesPreview key={ heroes.id } { ...heroes } />)
         }
         </div>
       </div>
