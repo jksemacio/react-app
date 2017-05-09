@@ -9,14 +9,6 @@ const Header = ({ message }) => {
   );
 };
 
-Header.propTypes = {
-  message: React.PropTypes.string
-};
-
-Header.defaultProps = {
-  message: 'this is the default props'
-};
-
 const App = () => {
   return (
     <div>
