@@ -1,10 +1,11 @@
 import React from 'react';
 
 import Header from './Header';
+import HeroesPreview from './HeroesPreview';
 
 class App extends React.Component {
   state = {
-    pageHeader: "Welome to React state"
+    pageHeader: 'Welome to Heroes'
   };
 
   componentDidMount() {
@@ -17,9 +18,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Header message={ this.state.pageHeader} />
-        <div>...</div>
+      <div className="App">
+        <Header message={ this.state.pageHeader } />
+        <HeroesPreview { ...this.props.heroes[0] } />
       </div>
     );
   };
