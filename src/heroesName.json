@@ -1,0 +1,12 @@
+{
+  "heroes" : [
+    {
+      "id": 1,
+      "name": "Jose Rizal"
+    },
+    {
+      "id": 2,
+      "name": "Andress Bonifacio"
+    }
+  ]
+}
