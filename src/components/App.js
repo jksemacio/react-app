@@ -2,13 +2,21 @@ import React from 'react';
 
 import Header from './Header';
 
-const App = () => {
-  return (
-    <div>
-      <Header message="Welcome to React" />
-      <div>...</div>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pageHeader: "Welome to React state"
+    };
+  };
+  render() {
+    return (
+      <div>
+        <Header message={ this.state.pageHeader} />
+        <div>...</div>
+      </div>
+    );
+  };
 };
 
 export default App;
