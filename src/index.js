@@ -1,15 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const App = (props) => {
+const Header = ({ message }) => {
   return (
-    <h2 className="text-center">
-      { props.headerMessage }
-    </h2>
+    <h1 className="text-center">
+      { message }
+    </h1>
+  );
+};
+
+Header.propTypes = {
+  message: React.PropTypes.string
+};
+
+Header.defaultProps = {
+  message: 'this is the default props'
+};
+
+const App = () => {
+  return (
+    <div>
+      <Header message="Welcome to React" />
+      <div>...</div>
+    </div>
   );
 };
 
 ReactDOM.render(
-  <App headerMessage="Hello props!"/>,
+  <App message="Hello props!"/>,
   document.getElementById('root')
 );
