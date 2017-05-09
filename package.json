@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/jksemacio/web-app#readme",
   "dependencies": {
+    "axios": "^0.16.1",
     "babel-cli": "^6.24.1",
     "concurrently": "^3.4.0",
     "ejs": "^2.5.6",
