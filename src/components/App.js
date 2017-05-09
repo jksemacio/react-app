@@ -3,13 +3,18 @@ import React from 'react';
 import Header from './Header';
 import HeroesPreview from './HeroesPreview';
 
+import data from '../heroesName';
+
 class App extends React.Component {
   state = {
-    pageHeader: 'Welome to Heroes'
+    pageHeader: 'Welome to Heroes',
+    heroes: []
   };
 
   componentDidMount() {
-    // ..
+   this.setState({
+     heroes: data.heroes
+   });
   };
 
   componentWillUnmount() {
@@ -22,7 +27,7 @@ class App extends React.Component {
         <Header message={ this.state.pageHeader } />
         <div>
         {
-         this.props.heroes.map( heroes =>
+         this.state.heroes.map( heroes =>
           <HeroesPreview key={ heroes.id } { ...heroes } />)
         }
         </div>

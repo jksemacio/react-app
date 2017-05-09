@@ -1,9 +1,11 @@
 import express from 'express';
 
+import data from '../src/heroesName';
+
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send({ data: [] });
+router.get('/heroes', (req, res) => {
+  res.send({ data: data.heroes });
 });
 
 export default router;
