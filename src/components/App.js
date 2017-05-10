@@ -14,14 +14,13 @@ class App extends React.Component {
   componentDidMount() {
     axios.get('/api/heroes')
       .then( response => {
-        console.log(response);
+        this.setState({
+          heroes: response.data.heroes
+        });
       })
       .catch( error => {
         console.log(error)
       });
-    this.setState({
-      heroes: []
-    });
   };
 
   componentWillUnmount() {
