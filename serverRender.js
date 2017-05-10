@@ -7,7 +7,10 @@ import App from './src/components/App';
 const serverRender = () =>
   axios.get(`${config.serverUrl}/api/heroes`)
     .then( response => {
-      return ReactDOMServer.renderToString(<App initialData={response.data.heroes}/>)
+      return {
+        initialMarkup: ReactDOMServer.renderToString(<App initialData={response.data.heroes}/>),
+        initialData: response.data
+      };
     })
     .catch( error => {
       console.log(error)
