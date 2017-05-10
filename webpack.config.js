@@ -54,7 +54,7 @@ const config = {
             },
             {
                 test: /\.ejs$/,
-                use: ['ejs-loader','ejs-html-loader?initialMarkup=Hello%20EJS!']
+                use: ['ejs-loader','ejs-html-loader?initialData=&initialMarkup=']
             }
         ]
     },
