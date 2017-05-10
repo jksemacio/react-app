@@ -4,7 +4,7 @@
   "description": "sample app",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently --kill-others \"npm run build\" \"nodemon --exec babel-node server.js\"",
+    "start": "concurrently \"npm run build\" \"nodemon --exec babel-node server.js\"",
     "clean": "rimraf build",
     "build": "webpack -wd",
     "serve": "webpack-dev-server --port 3000 --open --content-base build/"
@@ -41,7 +41,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.1",
-    "ejs-compiled-loader": "^1.1.0",
+    "ejs-html-loader": "^2.0.2",
     "ejs-loader": "^0.3.0",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^7.0.0",
