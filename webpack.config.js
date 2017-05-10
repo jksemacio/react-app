@@ -2,6 +2,18 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+import serverRender from "./serverRender";
+
+let initialMarkup, initialData;
+
+serverRender()
+.then( ({initialMarkup, initialData}) => {
+  initialMarkup = initialMarkup;
+  initialData = initialData;
+})
+.catch( error => {
+  console.log(error);
+});
 
 const VENDOR_LIBS = ['react','react-dom'];
 
@@ -54,7 +66,8 @@ const config = {
             },
             {
                 test: /\.ejs$/,
-                use: ['ejs-loader','ejs-html-loader?initialData=&initialMarkup=']
+                use: ['ejs-loader',
+                      `ejs-html-loader?initialData=${initialData}&initialMarkup=${initialMarkup}`]
             }
         ]
     },
