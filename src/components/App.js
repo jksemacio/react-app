@@ -1,9 +1,9 @@
 import React from 'react';
+import axios from 'axios';
 
 import Header from './Header';
 import HeroesPreview from './HeroesPreview';
 
-import data from '../heroesName';
 
 class App extends React.Component {
   state = {
@@ -12,9 +12,16 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-   this.setState({
-     heroes: data.heroes
-   });
+    axios.get('/api/heroes')
+      .then( response => {
+        console.log(response);
+      })
+      .catch( error => {
+        console.log(error)
+      });
+    this.setState({
+      heroes: []
+    });
   };
 
   componentWillUnmount() {
