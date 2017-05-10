@@ -8,7 +8,7 @@ import HeroesPreview from './HeroesPreview';
 class App extends React.Component {
   state = {
     pageHeader: 'Welome to Heroes',
-    heroes: []
+    heroes: this.props.initialData
   };
 
   componentDidMount() {
