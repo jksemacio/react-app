@@ -13,9 +13,10 @@ server.use('/static', express.static('build'));
 
 server.get('/', (req, res) => {
   serverRender()
-  .then( response => {
+  .then( ({initialMarkup, initialData}) => {
     res.render('index', {
-      initialMarkup: response
+      initialMarkup,
+      initialData
     });
   })
   .catch( error => {
