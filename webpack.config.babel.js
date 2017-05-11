@@ -60,12 +60,12 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './views/index.ejs'
+          template: './views/index.ejs'
         }),
         ExtractCss,
         ExtractSass,
         new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor','manifest']
+          names: ['vendor','manifest']
         })
     ]
 };
