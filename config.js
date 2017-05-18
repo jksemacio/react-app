@@ -1,6 +1,6 @@
 const env = process.env;
 
-export default {
+module.exports = {
   port: env.PORT || 3000,
   host: env.HOST || 'localhost',
   get serverUrl() {

@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import App from './App.jsx';
+import { render } from 'react-dom';
 
-import App from './components/App';
-
-ReactDOM.render(
-  <App initialData={window.initialData.heroes} />,
-  document.getElementById('root')
+render(
+    <App />,
+    document.getElementById('app')
 );
