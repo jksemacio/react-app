@@ -20,6 +20,21 @@ const config = {
                 use: 'babel-loader'
             },
             {
+                enforce: 'pre',
+                test: /\.jsx?$/,
+                use: "source-map-loader"
+            },
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                use: ['babel-loader', 'ts-loader']
+            },
+            {
+                enforce: 'pre',
+                test: /\.tsx?$/,
+                use: "source-map-loader"
+            },
+            {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
@@ -39,6 +54,10 @@ const config = {
             }
         ]
     },
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".jsx"]
+    },
+    devtool: 'inline-source-map',
     plugins: [
         new ExtractTextPlugin({
             filename: '[name].[contenthash].css'
