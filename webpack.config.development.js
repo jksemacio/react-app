@@ -4,13 +4,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-    entry: {
-        bundle: './src/index.js',
-        vendor: ['react','react-dom']
-    },
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: '[name].[chunkhash].js'
+        filename: 'bundle.js'
     },
     module: {
         rules: [
@@ -60,13 +57,10 @@ const config = {
     devtool: 'inline-source-map',
     plugins: [
         new ExtractTextPlugin({
-            filename: '[name].[contenthash].css'
+            filename: 'style.css'
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html'
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor','manifest']
         })
     ]
 };
