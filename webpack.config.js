@@ -27,6 +27,13 @@ const config = {
                 })
             },
             {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader','sass-loader']
+                })
+            },
+            {
                 test: /\.(jpe?g|png|gif|svg)$/,
                 use: ['file-loader']
             }
