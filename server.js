@@ -1,10 +1,10 @@
-const config = require('./config');
 const express = require('express');
-
 const server = express();
+
+server.set('port', (process.env.PORT || 5000));
 
 server.use(express.static(__dirname + '/build'));
 
-server.listen(config.port, config.host, () => {
-  console.log('Listening on port :', config.port );
+server.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
