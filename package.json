@@ -4,8 +4,7 @@
   "description": "sample app",
   "main": "index.js",
   "scripts": {
-    "start": "npm run clean && npm run build && npm run serve",
-    "serve": "node server.js",
+    "start": "node server.js",
     "build": "webpack -p --config webpack.config.production.js",
     "dev-server": "webpack-dev-server --port 3000 --config webpack.config.development.js",
     "clean": "rimraf build dist"
