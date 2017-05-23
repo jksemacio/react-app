@@ -1,0 +1,20 @@
+version: '1.0'
+
+steps:
+
+  build_image:
+    title: Building App Image
+    type: build
+    image_name: jksemacio/semu
+    working_directory: ${{main_clone}}
+    dockerfile: Dockerfile
+
+  push_to_registry:
+    title: Pushing to Docker Registry
+    type: push
+    candidate: '${{build_image}}'
+    tag: '${{CF_BRANCH}}'
+    credentials:
+      #make sure that you have a dockerUsername and dockerPassword define on the pipeline.
+      username: '${{dockerUsername}}'
+      password: '${{dockerPassword}}'
