@@ -4,10 +4,12 @@ machine:
 dependencies:
   override:
     - npm install
-    - npm install webpack -g
+    - npm install -g rimraf
+    - npm run clean
+    - npm install -g webpack
     - npm run build
 deployment:
-  staging:
+  heroku:
     branch: master
     commands:
       - git config --global user.email "jksemacio@gmail.com"
