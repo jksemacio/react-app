@@ -5,7 +5,7 @@ COPY package.json /app
 RUN npm install --production && npm cache clean && cp -rp ./node_modules /tmp/node_modules
 RUN npm install && npm cache clean
 COPY . /app
-RUN npm run build
+RUN npm run build && cp -rp ./build /tmp/build
 
 FROM node AS runner
 EXPOSE 3000
@@ -13,6 +13,6 @@ WORKDIR /app
 # Adding production dependencies to image
 COPY --from=builder /tmp/node_modules /app/node_modules
 # Adding build produced from builder
-COPY --from=builder /app/build /app/build
+COPY --from=builder /tmp/build /app/build
 COPY . /app
 CMD npm start
