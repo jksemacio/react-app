@@ -8,7 +8,7 @@ COPY . /app
 RUN npm run build && cp -rp ./build /tmp/build
 
 FROM node AS runner
-EXPOSE 3000
+EXPOSE 5000
 WORKDIR /app
 # Adding production dependencies to image
 COPY --from=builder /tmp/node_modules /app/node_modules
