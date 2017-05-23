@@ -5,14 +5,9 @@ dependencies:
   override:
     - npm install
     - npm install -g webpack
+    - npm run build
 deployment:
   heroku:
     branch: master
-    commands:
-      - git config --global user.email "jksemacio@gmail.com"
-      - git config --global user.name "jksemacio"
-      - git pull git@heroku.com:semu.git master
-      - npm run build
-      - git add build/
-      - git commit -m "added"
-      - git push git@heroku.com:semu.git master
+    heroku:
+      appname: semu
