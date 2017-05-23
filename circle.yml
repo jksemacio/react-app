@@ -10,6 +10,8 @@ deployment:
   staging:
     branch: master
     commands:
+      - git config --global user.email "jksemacio@gmail.com"
+      - git config --global user.name "jksemacio"
       - git add build/
       - git commit -m "added"
       - git push git@heroku.com:semu.git $CIRCLE_SHA1:master
