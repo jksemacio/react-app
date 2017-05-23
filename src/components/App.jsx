@@ -3,7 +3,7 @@ import styles from './App.css'
 
 class App extends Component {
     render() {
-        return <h1 className={styles.app}>Welcome to Heroku from CircleCI! ^_^</h1>;
+        return <h1 className={styles.app}>Welcome to Heroku from CircleCI!</h1>;
     };
 };
 
