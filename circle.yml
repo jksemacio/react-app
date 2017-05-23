@@ -6,12 +6,12 @@ dependencies:
     - npm install
     - npm install -g webpack
     - npm run build
-    - git config user.email "jksemacio@gmail.com"
-    - git config user.name "jksemacio"
-    - git add build/
-    - git commit -am "added"
 deployment:
   heroku:
     branch: master
-    heroku:
-      appname: semu
+    commands:
+      - git config user.email "jksemacio@gmail.com"
+      - git config user.name "jksemacio"
+      - git add build/
+      - git commit -am "added"
+      - git push https://git.heroku.com/semu.git master
