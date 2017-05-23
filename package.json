@@ -6,7 +6,6 @@
   "scripts": {
     "build": "webpack -p --config webpack.config.production.js",
     "dev-server": "webpack-dev-server --port 3000 --config webpack.config.development.js",
-    "postinstall": "npm run build",
     "start": "node server.js"
   },
   "repository": {
