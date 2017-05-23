@@ -12,6 +12,6 @@ deployment:
     commands:
       - git config --global user.email "jksemacio@gmail.com"
       - git config --global user.name "jksemacio"
-      - git add build/
+      - git add /home/ubuntu/web-app/build/
       - git commit -m "added"
       - git push git@heroku.com:semu.git $CIRCLE_SHA1:master
