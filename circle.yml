@@ -11,5 +11,6 @@ deployment:
     branch: master
     commands:
       - git add build/
+      - git commit -m "added"
     heroku:
       appname: semu
