@@ -12,5 +12,7 @@ EXPOSE 3000
 WORKDIR /app
 # Adding production dependencies to image
 COPY --from=builder /tmp/node_modules /app/node_modules
+# Adding build produced from builder
+COPY --from=builder /app/build /app/build
 COPY . /app
 CMD npm start
