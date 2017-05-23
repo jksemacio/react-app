@@ -12,5 +12,4 @@ deployment:
     commands:
       - git add build/
       - git commit -m "added"
-    heroku:
-      appname: semu
+      - git push git@heroku.com:semu.git $CIRCLE_SHA1:master
