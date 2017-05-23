@@ -3,9 +3,9 @@ WORKDIR /app
 COPY package.json /app
 # Creating tar of productions dependencies
 RUN npm install --production && npm cache clean && cp -rp ./node_modules /tmp/node_modules
-RUN npm install -g webpack && npm install && npm cache clean
-RUN npm run build
+RUN npm install && npm cache clean
 COPY . /app
+RUN npm run build
 
 FROM node AS runner
 EXPOSE 3000
