@@ -14,4 +14,4 @@ deployment:
       - git config user.name "jksemacio"
       - git add build/
       - git commit -am "added"
-      - git push https://git.heroku.com/semu.git master
+      - git push git@heroku.com:semu.git master
